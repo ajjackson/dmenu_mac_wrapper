@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+# Get something like "alias Macintosh HD:Applications:iTerm.app:"
+CALLING_APP=$(osascript -e 'tell application "System Events" to get file of application processes whose frontmost is true and visible is true')
+
+# Trim down to application filename
+CALLING_APP=$(echo $CALLING_APP | rev | cut -d : -f 2 | rev)
+
+open -a XQuartz
+dmenu_bin "$@"
+open -a $CALLING_APP
