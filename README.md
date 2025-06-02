@@ -3,7 +3,8 @@
 [dmenu](https://tools.suckless.org/dmenu) _can_ be used on Mac but there are some gotchas. Here we have:
 
 - A wrapper script that gives focus to the new XQuartz window while running dmenu, then return focus to original application.
-- A *justfile* that downloads and builds dmenu for an ARM Mac with XQuartz and Homebrew
+- A *justfile* that downloads and builds dmenu for an ARM Mac with XQuartz and Homebrew.
+  The actual binary will be copied to *~/.local/bin* as *dmenu_bin* and the wrapper script as *dmenu*.
 
 I guess the next step is to add some patches to the download/build procedure.
 
